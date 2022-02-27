@@ -3,8 +3,8 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import Header from 'components/Header';
 import Footer from 'components/Footer';
-
 import bg from 'assets/bg.png';
+import ConnectWalletRoutes from 'pages/ConnectWallet/routes';
 
 const routes = [
   // Menu
@@ -15,7 +15,8 @@ const routes = [
   { path: '/trading', component: lazy(() => import('pages/Trading')) },
   { path: '/game', component: lazy(() => import('pages/Game')) },
   // Wallet
-  { path: '/connect', component: lazy(() => import('pages/ConnectWallet')) },
+  // { path: '/connect', component: <ConnectWalletRoutes /> },
+  // { path: '/connect', component: lazy(() => import('pages/ConnectWallet')) },
 ];
 function ComposeRoutes() {
   return (
@@ -35,6 +36,7 @@ function ComposeRoutes() {
               const PageComponent = component;
               return <Route key={i} path={path} element={<PageComponent />} />;
             })}
+            <Route path="/connect/*" element={<ConnectWalletRoutes />} />
           </Routes>
         </div>
 
@@ -45,4 +47,3 @@ function ComposeRoutes() {
 }
 
 export default ComposeRoutes;
-export { ComposeRoutes };
