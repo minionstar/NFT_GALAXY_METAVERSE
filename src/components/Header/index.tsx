@@ -74,17 +74,17 @@ export const Header = () => {
                         {item.title}
                       </Link>
                     ))}
-                  </div>
-                </div>
-                <div className="hidden lg:flex">
-                  <div className="text-center">
-                    <button
-                      type="button"
-                      className="px-6 py-2 font-medium text-center bg-white rounded-full"
-                      onClick={connectWallet}
-                    >
-                      Connect Wallet
-                    </button>
+                    <div className="hidden lg:flex">
+                      <div className="text-center">
+                        <button
+                          type="button"
+                          className="px-6 py-2 font-medium text-center bg-white rounded-full"
+                          onClick={connectWallet}
+                        >
+                          Connect Wallet
+                        </button>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
